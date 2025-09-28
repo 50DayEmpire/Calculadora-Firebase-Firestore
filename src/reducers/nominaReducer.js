@@ -15,6 +15,12 @@ export const nominaReducer = (state = initialState, action) => {
         data: action.payload,
       };
 
+    case types.nominaDelete:
+      return {
+        ...state,
+        data: state.data.filter((registro) => registro.id !== action.payload),
+      };
+
     default:
       return state;
   }

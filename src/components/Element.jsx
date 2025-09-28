@@ -11,13 +11,13 @@ const Element = ({ data }) => {
   return (
     <tr>
       <td>{data.fecha}</td>
-      <td>{data.pago}</td>
+      <td>${data.pago}</td>
       <td>
         <button
           className="btn waves-effect waves-light red"
           onClick={handleDelete}
         >
-          Borrar
+          <i className="material-icons">delete_forever</i>
         </button>
       </td>
     </tr>

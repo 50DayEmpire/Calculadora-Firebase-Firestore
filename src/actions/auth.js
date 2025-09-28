@@ -60,6 +60,7 @@ export const logout = () => {
   return async (dispatch) => {
     await signOut(auth);
 
+    dispatch({ type: types.nominaClean });
     dispatch({ type: types.logout });
   };
 };

@@ -21,6 +21,12 @@ export const nominaReducer = (state = initialState, action) => {
         data: state.data.filter((registro) => registro.id !== action.payload),
       };
 
+    case types.nominaClean:
+      return {
+        ...state,
+        data: [],
+      };
+
     default:
       return state;
   }

@@ -27,6 +27,8 @@ const FormAdd = () => {
   const handleSave = (e) => {
     const precioFinal = horas * precioHoras;
     dispatch(crearRegistro(precioFinal));
+    setCantidadPago({ horas: 0, precioHoras: 0 });
+    setViewForm(false);
   };
 
   return (

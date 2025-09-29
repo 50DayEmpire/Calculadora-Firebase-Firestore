@@ -12,7 +12,7 @@ const AppScreen = () => {
     <>
       <Navbar />
 
-      <div className="container">
+      <div className="container animate__animated animate__backInUp">
         <h1 className="center">Hola {nombre}</h1>
         <hr />
 

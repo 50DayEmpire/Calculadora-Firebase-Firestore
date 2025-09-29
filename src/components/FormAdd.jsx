@@ -7,8 +7,8 @@ const FormAdd = () => {
   const [viewForm, setViewForm] = useState(false);
 
   const [cantidadPago, setCantidadPago] = useState({
-    horas: 0,
-    precioHoras: 0,
+    horas: "",
+    precioHoras: "",
   });
 
   const { horas, precioHoras } = cantidadPago;
@@ -27,7 +27,7 @@ const FormAdd = () => {
   const handleSave = (e) => {
     const precioFinal = horas * precioHoras;
     dispatch(crearRegistro(precioFinal));
-    setCantidadPago({ horas: 0, precioHoras: 0 });
+    setCantidadPago({ horas: "", precioHoras: "" });
     setViewForm(false);
   };
 
@@ -37,25 +37,32 @@ const FormAdd = () => {
         {viewForm ? "Cancelar" : "Agregar"}
       </button>
       {viewForm && (
-        <>
-          <input
-            type="text"
-            placeholder="Ingrese cantidad de pago por hora"
-            value={precioHoras}
-            onChange={handleCambio}
-            name="precioHoras"
-          />
-          <input
-            type="text"
-            placeholder="Ingrese cantidad de horas"
-            value={horas}
-            onChange={handleCambio}
-            name="horas"
-          />
+        <div className="animate__animated animate__fadeIn">
+          <div className="input-field col s12">
+            <label htmlFor="precioHoras">Pago por Hora:</label>
+            <input
+              type="text"
+              value={precioHoras}
+              onChange={handleCambio}
+              name="precioHoras"
+              id="precioHoras"
+            />
+          </div>
+
+          <div className="input-field col s12">
+            <label htmlFor="horas">Horas Laboradas</label>
+            <input
+              type="text"
+              value={horas}
+              onChange={handleCambio}
+              name="horas"
+              id="horas"
+            />
+          </div>
           <button className="btn purple" onClick={handleSave}>
             Calcular y Guardar
           </button>
-        </>
+        </div>
       )}
     </>
   );

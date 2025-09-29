@@ -9,7 +9,7 @@ const Element = ({ data }) => {
   };
 
   return (
-    <tr>
+    <tr className="animate__animated animate__fadeInUp">
       <td>{data.fecha}</td>
       <td>${data.pago}</td>
       <td>
